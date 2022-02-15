@@ -11,7 +11,14 @@ type Props = {
 
 export const DescriptionText = ({ product }: Props) => {
   return (
-    <Grid item xs={6} sm container className={styles.l_card__rightContent}>
+    <Grid
+      item
+      xs={6}
+      md={12}
+      sm
+      container
+      className={styles.l_card__rightContent}
+    >
       <Grid item xs container direction='column' spacing={2}>
         <Grid item xs>
           <Typography
