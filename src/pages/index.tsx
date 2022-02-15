@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 type Props = {
@@ -43,6 +44,11 @@ export default function Home({ products }: Props) {
                 maxWidth: 960,
                 flexGrow: 1,
                 cursor: 'pointer',
+                transition: 'all 0.3s',
+                '&:hover': {
+                  opacity: '0.8',
+                  transition: 'all 0.3s',
+                },
                 backgroundColor: (theme) =>
                   theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
               }}
@@ -56,28 +62,29 @@ export default function Home({ products }: Props) {
                       position: 'relative',
                     }}
                   >
-                    <div
-                      style={{
+                    <Box
+                      sx={{
+                        backgroundColor: 'primary.main',
                         position: 'absolute',
                         top: '0',
                         right: '0',
-                        backgroundColor: '#1976d2',
                       }}
                     >
-                      <p style={{
-                        margin: '0',
-                        padding: '5px 10px',
-                        color: 'white',
-                      }}>
+                      <p
+                        style={{
+                          margin: '0',
+                          padding: '5px 10px',
+                          color: 'white',
+                        }}
+                      >
                         {product.category.category}
                       </p>
-                    </div>
+                    </Box>
                     <Img
                       alt='complex'
                       src={product.eye_catch.url}
                       style={{
                         objectFit: 'cover',
-                        // maxHeight: "200px"
                       }}
                     />
                   </ButtonBase>
@@ -95,8 +102,8 @@ export default function Home({ products }: Props) {
                       >
                         {product.title}
                       </Typography>
-                      <div
-                        style={{
+                      <Box
+                        sx={{
                           display: 'flex',
                         }}
                       >
@@ -116,21 +123,37 @@ export default function Home({ products }: Props) {
                               textDecoration: 'none',
                               verticalAlign: 'top',
                               whiteSpace: 'nowrap',
+                              '&::before': {
+                                color: '#cd162c',
+                                content: '"#"',
+                                fontWeight: '700',
+                                marginRight: '3px',
+                              },
                             }}
                             variant='body2'
                           >
-                            <span style={{
-                              color: '#cd162c',
-                              content: "#",
-                              fontWeight: '700',
-                              marginRight: '3px',
-                            }}>
-                              #
-                            </span>
                             {tag.tag}
                           </Typography>
                         ))}
-                      </div>
+                      </Box>
+                      <Box>
+                        <Typography
+                          sx={{
+                            lineHeight: '1.75',
+                            marginBottom: '20px',
+                          }}
+                          variant='body2'
+                        >
+                          {product.description}
+                        </Typography>
+                      </Box>
+                      <Box
+                        sx={{
+                          textAlign: 'right',
+                        }}
+                      >
+                        <Typography variant='body2'>続きを読む</Typography>
+                      </Box>
                     </Grid>
                   </Grid>
                 </Grid>

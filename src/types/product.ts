@@ -28,5 +28,6 @@ export type Product = {
       revisedAt: string,
       tag: string
     }
-  ]
+  ],
+  description: string
 }
