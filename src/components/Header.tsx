@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -25,12 +26,20 @@ export default function ButtonAppBar() {
               <MenuIcon />
             </IconButton>
             <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-              News
+              Portfolio
             </Typography>
-            <Button color='inherit'>Home</Button>
-            <Button color='inherit'>About</Button>
-            <Button color='inherit'>Product</Button>
-            <Button color='inherit'>Contact</Button>
+            <Link href='/'>
+              <Button color='inherit'>Home</Button>
+            </Link>
+            <Link href='/about'>
+              <Button color='inherit'>About</Button>
+            </Link>
+            <Link href='/product'>
+              <Button color='inherit'>Product</Button>
+            </Link>
+            <Link href='/contact'>
+              <Button color='inherit'>Contact</Button>
+            </Link>
           </Toolbar>
         </AppBar>
       </Box>
