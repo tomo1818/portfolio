@@ -1,0 +1,17 @@
+.pageTitle {
+  padding: 20px;
+}
+
+.sp_only {
+  display: none;
+}
+
+@media(max-width: 768px) {
+  .sp_only {
+  display: block;
+}
+
+  .pc_only {
+    display: none;
+  }
+}
