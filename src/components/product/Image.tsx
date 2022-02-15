@@ -10,7 +10,7 @@ type Props = {
 
 export const Image = ({ category, eye_catch_url }: Props) => {
   return (
-    <Grid item xs={6} md={12} className={styles.l_card__leftContent}>
+    <Grid item xs={12} md={6} className={styles.l_card__leftContent}>
       <ButtonBase className={styles.l_card__leftContent__imageBox}>
         <Box className={styles.l_card__leftContent__categoryBox}>
           <p className={styles.l_card__leftContent__categoryText}>{category}</p>

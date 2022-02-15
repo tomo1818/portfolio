@@ -13,8 +13,8 @@ export const DescriptionText = ({ product }: Props) => {
   return (
     <Grid
       item
-      xs={6}
-      md={12}
+      xs={12}
+      md={6}
       sm
       container
       className={styles.l_card__rightContent}
