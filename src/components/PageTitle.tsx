@@ -3,7 +3,7 @@ import styles from '../styles/Common.module.scss';
 
 type Props = {
   title: string;
-}
+};
 
 export const PageTitle = ({ title }: Props) => {
   return (
@@ -13,7 +13,7 @@ export const PageTitle = ({ title }: Props) => {
       align='center'
       className={styles.pageTitle}
     >
-      { title }
+      {title}
     </Typography>
   );
 };

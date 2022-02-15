@@ -1,8 +1,8 @@
 export type Tag = {
-  id: string,
-  createdAt: string,
-  updatedAt: string,
-  publishedAt: string,
-  revisedAt: string,
-  tag: string,
-}
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  tag: string;
+};

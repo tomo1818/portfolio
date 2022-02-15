@@ -46,5 +46,5 @@ export const getStaticProps = async () => {
       categories: categoryData,
       tags: tagData,
     },
-  }
-}
+  };
+};

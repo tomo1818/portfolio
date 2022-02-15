@@ -18,7 +18,7 @@
 
   &:hover {
     opacity: 0.8;
-    transition: all 0.3s,
+    transition: all 0.3s;
   }
 
   &__leftContent {
@@ -76,7 +76,7 @@
 
       &::before {
         color: #cd162c;
-        content: "#";
+        content: '#';
         font-weight: bold;
         margin-right: 3px;
       }
@@ -91,5 +91,4 @@
       text-align: right;
     }
   }
-
 }

@@ -10,7 +10,7 @@
 }
 
 .eyeCatchContainer {
-  height: clamp(300px,62.5vw,500px);
+  height: clamp(300px, 62.5vw, 500px);
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -83,8 +83,8 @@
 }
 
 .heading {
-  font-size: .875rem;
-  line-height: calc(.98438 + .4 *2);
+  font-size: 0.875rem;
+  line-height: calc(0.98438 + 0.4 * 2);
 
   &__content {
     margin-bottom: 0.9rem;
@@ -96,10 +96,11 @@
     flex-direction: row;
     justify-content: center;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       background-color: rgb(17, 17, 17);
       box-sizing: border-box;
-      content: "";
+      content: '';
       display: block;
       flex-basis: 0%;
       flex-grow: 1;
@@ -125,7 +126,7 @@
     padding-left: 0;
 
     & > li {
-      line-height: calc(.98438 + 0.4 * 2);
+      line-height: calc(0.98438 + 0.4 * 2);
       word-break: break-word;
 
       & > a {

@@ -3,7 +3,7 @@ import type { Tag } from '../../types/tag';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import styles from '../../styles/ProductDetail.module.scss';
-import { TagContent } from '../../components/product/tag';
+import { TagContent } from '../../components/product/Tag';
 
 type Props = {
   categories: Category[];

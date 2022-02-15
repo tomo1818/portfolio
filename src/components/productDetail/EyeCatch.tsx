@@ -4,7 +4,7 @@ import styles from '../../styles/ProductDetail.module.scss';
 
 type Props = {
   product: Product;
-}
+};
 
 export const EyeCatch = ({ product }: Props) => {
   return (
@@ -16,5 +16,5 @@ export const EyeCatch = ({ product }: Props) => {
         />
       </Box>
     </Box>
-  )
-}
+  );
+};

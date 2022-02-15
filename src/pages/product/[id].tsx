@@ -42,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     props: {
       product: productData,
       categories: categoryData.contents,
-      tags: tagData.contents
+      tags: tagData.contents,
     },
   };
 };

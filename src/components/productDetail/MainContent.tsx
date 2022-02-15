@@ -7,13 +7,18 @@ import AutorenewIcon from '@mui/icons-material/Autorenew';
 
 type Props = {
   product: Product;
-}
+};
 
 export const MainContent = ({ product }: Props) => {
-  const publishedData = product.publishedAt.split("-");
-  const revisedData = product.revisedAt.split("-");
+  const publishedData = product.publishedAt.split('-');
+  const revisedData = product.revisedAt.split('-');
   const publishedAt =
-    publishedData[0] + '年' + publishedData[1] + '月' + publishedData[2].split("T")[0] + "日";
+    publishedData[0] +
+    '年' +
+    publishedData[1] +
+    '月' +
+    publishedData[2].split('T')[0] +
+    '日';
   const revisedAt =
     revisedData[0] +
     '年' +
@@ -44,4 +49,4 @@ export const MainContent = ({ product }: Props) => {
       </Container>
     </Grid>
   );
-}
+};
