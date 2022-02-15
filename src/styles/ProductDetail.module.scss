@@ -1,0 +1,137 @@
+.Heading {
+  padding: 0.5rem 1rem;
+  background: #f7f7f7;
+  border-left: 4px solid #cd162c;
+}
+
+.subHeading {
+  border-bottom: 3px solid #f7f7f7;
+  padding-bottom: 0.5rem;
+}
+
+.eyeCatchContainer {
+  height: clamp(300px,62.5vw,500px);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  padding-bottom: 3.6rem;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 3.6rem;
+  position: relative;
+
+  &__box {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__img {
+    height: 100%;
+    left: 0;
+    min-height: auto;
+    min-width: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: 50% 50%;
+    object-position: 50% 50%;
+    top: 0;
+    transform: none;
+    width: 100%;
+  }
+}
+
+.main {
+  padding: 2rem 0;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.mainC {
+  &__contents {
+    &__title {
+      padding: 0.5rem 1rem;
+      background: #f7f7f7;
+      border-left: 4px solid #cd162c;
+    }
+
+    &__dateContents {
+      display: flex;
+      flex-wrap: wrap;
+      &__content {
+        display: flex;
+        flex: wrap;
+        align-items: center;
+
+        & > p {
+          margin-left: 4px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    &__body {
+      h3 {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.heading {
+  font-size: .875rem;
+  line-height: calc(.98438 + .4 *2);
+
+  &__content {
+    margin-bottom: 0.9rem;
+    font-size: 1.2rem;
+    line-height: calc(1 + 0.4 * 2);
+    align-items: center;
+    color: rgb(51, 51, 51);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &::before, &::after {
+      background-color: rgb(17, 17, 17);
+      box-sizing: border-box;
+      content: "";
+      display: block;
+      flex-basis: 0%;
+      flex-grow: 1;
+      flex-shrink: 0;
+      height: 1px;
+      min-width: 20px;
+    }
+
+    &::before {
+      margin-right: 8px;
+    }
+
+    &::after {
+      margin-left: 8px;
+    }
+  }
+}
+
+.categories {
+  & > ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    & > li {
+      line-height: calc(.98438 + 0.4 * 2);
+      word-break: break-word;
+
+      & > a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}

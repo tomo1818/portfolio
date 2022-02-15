@@ -2,13 +2,14 @@ import Link from 'next/link';
 import type { Product } from '../types/product';
 import { client } from '../libs/client';
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import styles from '../styles/Product.module.scss';
+import { TagContent } from '../components/product/tag';
 
 type Props = {
   products: Array<Product>;
@@ -25,135 +26,63 @@ export default function Home({ products }: Props) {
       >
         Products
       </Typography>
-      <ul>
-        {products.map((product) => (
-          <Link href={`/product/${product.id}`}>
-            <Paper
-              sx={{
-                p: 2,
-                margin: 'auto',
-                marginBottom: '30px',
-                maxWidth: 960,
-                flexGrow: 1,
-                cursor: 'pointer',
-                transition: 'all 0.3s',
-                '&:hover': {
-                  opacity: '0.8',
-                  transition: 'all 0.3s',
-                },
-                backgroundColor: (theme) =>
-                  theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-              }}
-            >
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <ButtonBase
-                    style={{
-                      margin: '0 auto',
-                      display: 'flex',
-                      position: 'relative',
-                    }}
-                  >
-                    <Box
+      {products.map((product) => (
+        <Link href={`/product/${product.id}`}>
+          <Paper className={styles.l_card} sx={{ p: 2 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={6} className={styles.l_card__leftContent}>
+                <ButtonBase className={styles.l_card__leftContent__imageBox}>
+                  <Box className={styles.l_card__leftContent__categoryBox}>
+                    <p className={styles.l_card__leftContent__categoryText}>
+                      {product.category.category}
+                    </p>
+                  </Box>
+                  <img
+                    className={styles.l_card__leftContent__image}
+                    alt='complex'
+                    src={product.eye_catch.url}
+                  />
+                </ButtonBase>
+              </Grid>
+              <Grid
+                item
+                xs={6}
+                sm
+                container
+                className={styles.l_card__rightContent}
+              >
+                <Grid item xs container direction='column' spacing={2}>
+                  <Grid item xs>
+                    <Typography
+                      gutterBottom
+                      variant='h5'
+                      component='h2'
+                      className={styles.l_card__rightContent__title}
                       sx={{
-                        backgroundColor: 'primary.main',
-                        position: 'absolute',
-                        top: '0',
-                        right: '0',
+                        fontWeight: 'bold',
                       }}
                     >
-                      <p
-                        style={{
-                          margin: '0',
-                          padding: '5px 10px',
-                          color: 'white',
-                        }}
-                      >
-                        {product.category.category}
-                      </p>
-                    </Box>
-                    <Img
-                      alt='complex'
-                      src={product.eye_catch.url}
-                      style={{
-                        objectFit: 'cover',
-                      }}
-                    />
-                  </ButtonBase>
-                </Grid>
-                <Grid item xs={6} sm container>
-                  <Grid item xs container direction='column' spacing={2}>
-                    <Grid item xs>
+                      {product.title}
+                    </Typography>
+                    <TagContent tags={product.tag} />
+                    <Box>
                       <Typography
-                        gutterBottom
-                        variant='h5'
-                        component='h2'
-                        sx={{
-                          fontWeight: 'bold',
-                        }}
+                        className={styles.l_card__rightContent__description}
+                        variant='body2'
                       >
-                        {product.title}
+                        {product.description}
                       </Typography>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                        }}
-                      >
-                        {product.tag.map((tag) => (
-                          <Typography
-                            sx={{
-                              cursor: 'pointer',
-                              margin: '0 4px 8px 0',
-                              backgroundColor: '#f7f7f7',
-                              border: '1px solid transparent',
-                              borderColor: '#eee',
-                              borderRadius: '6px',
-                              color: '#333',
-                              display: 'inline-block',
-                              lineHeight: '1',
-                              padding: '4px 8px',
-                              textDecoration: 'none',
-                              verticalAlign: 'top',
-                              whiteSpace: 'nowrap',
-                              '&::before': {
-                                color: '#cd162c',
-                                content: '"#"',
-                                fontWeight: '700',
-                                marginRight: '3px',
-                              },
-                            }}
-                            variant='body2'
-                          >
-                            {tag.tag}
-                          </Typography>
-                        ))}
-                      </Box>
-                      <Box>
-                        <Typography
-                          sx={{
-                            lineHeight: '1.75',
-                            marginBottom: '20px',
-                          }}
-                          variant='body2'
-                        >
-                          {product.description}
-                        </Typography>
-                      </Box>
-                      <Box
-                        sx={{
-                          textAlign: 'right',
-                        }}
-                      >
-                        <Typography variant='body2'>続きを読む</Typography>
-                      </Box>
-                    </Grid>
+                    </Box>
+                    <Box className={styles.l_card__rightContent__next}>
+                      <Typography variant='body2'>続きを読む</Typography>
+                    </Box>
                   </Grid>
                 </Grid>
               </Grid>
-            </Paper>
-          </Link>
-        ))}
-      </ul>
+            </Grid>
+          </Paper>
+        </Link>
+      ))}
     </div>
   );
 }
@@ -161,10 +90,14 @@ export default function Home({ products }: Props) {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: 'product' });
+  const categoryData = await client.get({ endpoint: 'product-category' });
+  const tagData = await client.get({ endpoint: 'product-tag' });
 
   return {
     props: {
       products: data.contents,
+      categories: categoryData,
+      tags: tagData
     },
   };
 };
