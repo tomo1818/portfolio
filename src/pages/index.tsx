@@ -14,15 +14,7 @@ type Props = {
   products: Array<Product>;
 };
 
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
-});
-
 export default function Home({ products }: Props) {
-  console.log(products[0].id);
   return (
     <div>
       <Typography
