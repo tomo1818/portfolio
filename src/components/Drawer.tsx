@@ -38,7 +38,7 @@ export const DrawerMenu = ({ menuList }: Props) => {
     >
       <List>
         {menuList.map((text) => (
-          <Link href={text === 'HOME' ? '/' : '/' + text.toLowerCase()}>
+          <Link key={text} href={text === 'HOME' ? '/' : '/' + text.toLowerCase()}>
             <ListItem button key={text} sx={{ textAlign: 'center' }}>
               <ListItemText primary={text} />
             </ListItem>

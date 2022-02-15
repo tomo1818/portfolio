@@ -20,7 +20,7 @@ export const SideBar = ({ categories, tags }: Props) => {
         <div className={styles.categories}>
           <ul>
             {categories.map((category) => (
-              <li>
+              <li key={category.id}>
                 <a href='#'>{category.category}</a>
               </li>
             ))}

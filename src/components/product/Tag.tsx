@@ -12,6 +12,7 @@ export const TagContent = ({ tags }: Props) => {
     <Box className={styles.l_card__rightContent__tagBox}>
       {tags.map((tag) => (
         <Typography
+          key={tag.tag}
           className={styles.l_card__rightContent__tagName}
           variant='body2'
         >

@@ -18,7 +18,7 @@ export default function Home({ products }: Props) {
     <div className={styles.productContainer}>
       <PageTitle title='Products' />
       {products.map((product) => (
-        <Link href={`/product/${product.id}`}>
+        <Link key={product.id} href={`/product/${product.id}`}>
           <Paper className={styles.l_card} sx={{ p: 2 }}>
             <Grid container spacing={2}>
               <Image

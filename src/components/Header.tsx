@@ -24,7 +24,7 @@ export default function ButtonAppBar() {
               Portfolio
             </Typography>
             {MenuList.map((text) => (
-              <div className={styles.pc_only}>
+              <div key={text} className={styles.pc_only}>
                 <Link href={text === 'HOME' ? '/' : '/' + text.toLowerCase()}>
                   <Button color='inherit'>{text}</Button>
                 </Link>
