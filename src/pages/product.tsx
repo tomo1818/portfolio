@@ -16,7 +16,7 @@ type Props = {
 export default function Home({ products }: Props) {
   return (
     <div className={styles.productContainer}>
-      <PageTitle title='Products' />
+      <PageTitle title='Product' />
       {products.map((product) => (
         <Link key={product.id} href={`/product/${product.id}`}>
           <Paper className={styles.l_card} sx={{ p: 2 }}>

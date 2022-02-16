@@ -1,6 +1,6 @@
 .productContainer {
   padding: 0 0 30px;
-  background-image: url('http://talking-ultrasuede.jp/wordpress/wp-content/themes/ultrasuede/src/images/bg.jpg');
+  background-image: url('../assets/product-bg.jpeg');
 }
 
 .l_card {
@@ -51,6 +51,12 @@
   }
 
   &__rightContent {
+    &__box {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
     &__title {
       font-weight: bold;
     }
@@ -62,7 +68,7 @@
 
     &__tagName {
       cursor: pointer;
-      margin: 0 4px 8px 0;
+      margin: 0 8px 8px 0;
       background-color: #f7f7f7;
       border: 1px solid transparent;
       border-color: #eee;
@@ -88,6 +94,7 @@
     }
 
     &__next {
+      margin-top: auto;
       text-align: right;
     }
   }

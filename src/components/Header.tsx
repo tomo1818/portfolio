@@ -11,7 +11,7 @@ import styles from '../styles/Common.module.scss';
 
 import { DrawerMenu } from './Drawer';
 
-const MenuList = ['HOME', 'ABOUT', 'PRODUCT', 'CONTACT'];
+const MenuList = ['HOME', 'ABOUT', 'SKILL', 'PRODUCT', 'CONTACT'];
 
 export default function ButtonAppBar() {
   return (
