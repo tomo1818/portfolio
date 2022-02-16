@@ -50,7 +50,6 @@ export default function BlogId({ product, categories, tags }: Props) {
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'product' });
-  console.log(data.contents);
 
   const paths = data.contents.map((content: any) => `/product/${content.id}`);
   return { paths, fallback: false };
@@ -58,7 +57,6 @@ export const getStaticPaths = async () => {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context: any) => {
-  console.log(context);
   const id = context.params.id;
   const data = await client.get({ endpoint: 'product', contentId: id });
   const categoryData = await client.get({ endpoint: 'product-category' });
