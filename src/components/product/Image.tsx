@@ -1,10 +1,12 @@
 import Grid from '@mui/material/Grid';
 import ButtonBase from '@mui/material/ButtonBase';
 import Box from '@mui/material/Box';
+import Link from 'next/Link';
 import styles from '../../styles/Product.module.scss';
+import { Category } from '../../types/category';
 
 type Props = {
-  category: string;
+  category: Category;
   eye_catch_url: string;
 };
 
@@ -12,9 +14,13 @@ export const Image = ({ category, eye_catch_url }: Props) => {
   return (
     <Grid item xs={12} md={6} className={styles.l_card__leftContent}>
       <ButtonBase className={styles.l_card__leftContent__imageBox}>
-        <Box className={styles.l_card__leftContent__categoryBox}>
-          <p className={styles.l_card__leftContent__categoryText}>{category}</p>
-        </Box>
+        <Link href={`/category/${category.id}`}>
+          <Box className={styles.l_card__leftContent__categoryBox}>
+            <p className={styles.l_card__leftContent__categoryText}>
+              {category.category}
+            </p>
+          </Box>
+        </Link>
         <img
           className={styles.l_card__leftContent__image}
           alt='complex'

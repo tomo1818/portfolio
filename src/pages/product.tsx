@@ -1,39 +1,17 @@
-import Link from 'next/link';
 import type { Product } from '../types/product';
 import { client } from '../libs/client';
-import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import styles from '../styles/Product.module.scss';
-import commonStyles from '../styles/Common.module.scss';
-import { Image } from '../components/product/Image';
-import { PageTitle } from '../components/PageTitle';
-import { DescriptionText } from '../components/product/DescriptionText';
+import { ProductMain } from '../components/product/ProductMain';
 
 type Props = {
   products: Array<Product>;
+
 };
 
-export default function Home({ products }: Props) {
+export default function Product({ products }: Props) {
   return (
-    <div
-      className={`${commonStyles.mainContainer} ${commonStyles.mainBg} ${styles.productContainer}`}
-    >
-      <PageTitle title='Product' />
-      {products.map((product) => (
-        <Link key={product.id} href={`/product/${product.id}`}>
-          <Paper className={styles.l_card} sx={{ p: 2 }}>
-            <Grid container spacing={2}>
-              <Image
-                category={product.category.category}
-                eye_catch_url={product.eye_catch.url}
-              />
-              <DescriptionText product={product} />
-            </Grid>
-          </Paper>
-        </Link>
-      ))}
-    </div>
+    <>
+      <ProductMain products={products} />
+    </>
   );
 }
 
@@ -46,8 +24,8 @@ export const getStaticProps = async () => {
   return {
     props: {
       products: data.contents,
-      categories: categoryData,
-      tags: tagData,
+      categories: categoryData.contents,
+      tags: tagData.contents,
     },
   };
 };
