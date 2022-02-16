@@ -5,6 +5,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import styles from '../styles/Product.module.scss';
+import commonStyles from '../styles/Common.module.scss';
 import { Image } from '../components/product/Image';
 import { PageTitle } from '../components/PageTitle';
 import { DescriptionText } from '../components/product/DescriptionText';
@@ -15,7 +16,9 @@ type Props = {
 
 export default function Home({ products }: Props) {
   return (
-    <div className={styles.productContainer}>
+    <div
+      className={`${commonStyles.mainContainer} ${commonStyles.mainBg} ${styles.productContainer}`}
+    >
       <PageTitle title='Product' />
       {products.map((product) => (
         <Link key={product.id} href={`/product/${product.id}`}>

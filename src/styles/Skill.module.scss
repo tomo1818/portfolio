@@ -1,24 +1,22 @@
-.App {
-  .l_skill {
-    width: 100%;
-    margin: 0 auto;
+.l_skill {
+  width: 100%;
+  margin: 0 auto;
 
-    &__card {
-      margin: 0 auto 1rem;
+  &__card {
+    margin: 0 auto 1rem;
 
-      &__img {
-        object-fit: contain;
-        padding: 1.5rem 0 0;
-      }
+    &__img {
+      object-fit: contain;
+      padding: 1.5rem 0 0;
+    }
 
-      &__title {
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 0.2rem;
-      }
+    &__title {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.2rem;
+    }
 
-      &__description {
-        min-height: 41px;
-      }
+    &__description {
+      min-height: 41px;
     }
   }
 }
