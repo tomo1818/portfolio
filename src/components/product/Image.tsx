@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import ButtonBase from '@mui/material/ButtonBase';
 import Box from '@mui/material/Box';
-import Link from 'next/Link';
+import Link from 'next/link';
 import styles from '../../styles/Product.module.scss';
 import { Category } from '../../types/category';
 

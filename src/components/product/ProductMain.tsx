@@ -1,4 +1,4 @@
-import Link from 'next/Link';
+import Link from 'next/link';
 import type { Product } from '../../types/product';
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
