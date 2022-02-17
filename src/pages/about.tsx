@@ -15,7 +15,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { SiPython, SiShopify } from 'react-icons/si';
 import { ImAndroid } from 'react-icons/im';
 
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
 import Typography from '@mui/material/Typography';
@@ -42,10 +45,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(
-  name: string,
-  content: string,
-) {
+function createData(name: string, content: string) {
   return { name, content };
 }
 
@@ -53,7 +53,6 @@ const rows = [
   createData('氏名', 'tomo'),
   createData('所属', '東京工業大学 工学院 修士1年'),
 ];
-
 
 export default function About() {
   return (
