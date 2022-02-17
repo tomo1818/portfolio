@@ -3,14 +3,15 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { PageTitle } from '../components/PageTitle';
 import { TextField } from '@material-ui/core';
-import { useState } from 'react';
-import commonStyles from '../styles/common.module.scss';
+import commonStyles from '../styles/Common.module.scss';
 import styles from '../styles/Contact.module.scss';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { init, send } from 'emailjs-com';
+import Router from 'next/router';
 
-interface SampleFormInput {
+interface FormInput {
   name: string;
   email: string;
   title: string;
@@ -33,25 +34,46 @@ const schema = yup.object({
     .min(10, '10文字以上入力してください')
 });
 
+// サンクスページ遷移
+const handler = (path: string) => {
+  Router.push(path);
+};
+
 export default function Contact() {
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [title, setTitle] = useState('');
-  // const [message, setMessage] = useState('');
+  const userID = process.env.NEXT_PUBLIC_USER_ID;
+  const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
+  const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SampleFormInput>({
+  } = useForm<FormInput>({
     resolver: yupResolver(schema),
   });
 
   // フォーム送信時の処理
-  const onSubmit: SubmitHandler<SampleFormInput> = (data) => {
+  const onSubmit: SubmitHandler<FormInput> = (data) => {
     // バリデーションチェックOK！なときに行う処理を追加
-    console.log(data);
-  };
+    if (
+      userID !== undefined &&
+      serviceID !== undefined &&
+      templateID !== undefined
+    ) {
+      init(userID);
+
+      const template_param = {
+        to_name: data.name,
+        from_email: data.email,
+        title: data.title,
+        message: data.message,
+      };
+
+      send(serviceID, templateID, template_param).then(() => {
+        handler('/thanks');
+      });
+    };
+  }
 
   return (
     <div
@@ -109,7 +131,7 @@ export default function Contact() {
             label='メッセージ'
             variant='outlined'
             multiline
-            rows={4}
+            rows={8}
             {...register('message')}
             error={'message' in errors}
             helperText={errors.message?.message}

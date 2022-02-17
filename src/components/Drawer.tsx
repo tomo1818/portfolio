@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from 'next/Link';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';

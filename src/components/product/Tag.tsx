@@ -2,7 +2,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import styles from '../../styles/Product.module.scss';
 import { Tag } from '../../types/tag';
-import Link from 'next/link';
+import Link from 'next/Link';
 
 
 type Props = {

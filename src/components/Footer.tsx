@@ -1,5 +1,5 @@
 import styles from '../styles/Footer.module.scss';
-import Link from 'next/link';
+import Link from 'next/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
