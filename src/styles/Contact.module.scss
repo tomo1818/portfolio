@@ -1,0 +1,21 @@
+.contactContainer {
+  .l_contact {
+    border-radius: 10px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    position: relative;
+    outline: 0;
+    margin: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding: 24px;
+    background-color: #fff;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+  }
+}
