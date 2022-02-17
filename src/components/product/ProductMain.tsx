@@ -34,4 +34,4 @@ export const ProductMain = ({ products }: Props) => {
       ))}
     </div>
   );
-}
+};

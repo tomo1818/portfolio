@@ -4,7 +4,6 @@ import { ProductMain } from '../components/product/ProductMain';
 
 type Props = {
   products: Array<Product>;
-
 };
 
 export default function Product({ products }: Props) {

@@ -25,13 +25,11 @@ const schema = yup.object({
     .string()
     .required('メールアドレスは必須項目です。')
     .email('正しいメールアドレス入力してください'),
-  title: yup
-    .string()
-    .required('タイトルは必須項目です。'),
+  title: yup.string().required('タイトルは必須項目です。'),
   message: yup
     .string()
     .required('メッセージは必須項目です。')
-    .min(10, '10文字以上入力してください')
+    .min(10, '10文字以上入力してください'),
 });
 
 // サンクスページ遷移
@@ -72,8 +70,8 @@ export default function Contact() {
       send(serviceID, templateID, template_param).then(() => {
         handler('/thanks');
       });
-    };
-  }
+    }
+  };
 
   return (
     <div

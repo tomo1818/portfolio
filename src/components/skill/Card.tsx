@@ -7,12 +7,11 @@ import { CardActionArea } from '@mui/material';
 import styles from '../../styles/Skill.module.scss';
 import Rating from '@mui/material/Rating';
 
-
 type Props = {
-  rate: number
-  title: string
+  rate: number;
+  title: string;
   description: string;
-}
+};
 
 export default function ActionAreaCard({ rate, title, description }: Props) {
   return (

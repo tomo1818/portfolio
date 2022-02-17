@@ -62,7 +62,11 @@ export default function Skill() {
       <Grid container spacing={2} className={styles.l_skill}>
         {skills.map((skill) => (
           <Grid key={skill.title} xs={12} sm={6} lg={4}>
-            <Card title={skill.title} description={skill.description} rate={skill.rate} />
+            <Card
+              title={skill.title}
+              description={skill.description}
+              rate={skill.rate}
+            />
           </Grid>
         ))}
       </Grid>
