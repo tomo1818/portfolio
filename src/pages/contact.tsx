@@ -1,33 +1,57 @@
-import commonStyles from '../styles/common.module.scss';
-import { PageTitle } from '../components/PageTitle';
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import styles from '../styles/Contact.module.scss';
 import Button from '@mui/material/Button';
+import { PageTitle } from '../components/PageTitle';
+import { TextField } from '@material-ui/core';
+import { useState } from 'react';
+import commonStyles from '../styles/common.module.scss';
+import styles from '../styles/Contact.module.scss';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
-interface State {
+interface SampleFormInput {
   name: string;
-  mail: string;
+  email: string;
   title: string;
   message: string;
 }
 
+// バリデーションルール
+const schema = yup.object({
+  name: yup.string().required('氏名は必須項目です。'),
+  email: yup
+    .string()
+    .required('メールアドレスは必須項目です。')
+    .email('正しいメールアドレス入力してください'),
+  title: yup
+    .string()
+    .required('タイトルは必須項目です。'),
+  message: yup
+    .string()
+    .required('メッセージは必須項目です。')
+    .min(10, '10文字以上入力してください')
+});
+
 export default function Contact() {
-  const [values, setValues] = React.useState<State>({
-    name: '',
-    mail: '',
-    title: '',
-    message: '',
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [title, setTitle] = useState('');
+  // const [message, setMessage] = useState('');
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SampleFormInput>({
+    resolver: yupResolver(schema),
   });
 
-  const handleChange =
-    (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-      setValues({ ...values, [prop]: event.target.value });
-    };
+  // フォーム送信時の処理
+  const onSubmit: SubmitHandler<SampleFormInput> = (data) => {
+    // バリデーションチェックOK！なときに行う処理を追加
+    console.log(data);
+  };
 
   return (
     <div
@@ -44,65 +68,63 @@ export default function Contact() {
         className={styles.l_contact}
       >
         <div>
-          <FormControl
+          <TextField
+            className={styles.l_contact__input}
+            required
             fullWidth
-            sx={{ m: 1 }}
-            variant='filled'
-            color='secondary'
-          >
-            <InputLabel htmlFor='filled-adornment-title'>氏名</InputLabel>
-            <FilledInput
-              id='filled-adornment-title'
-              value={values.name}
-              onChange={handleChange('name')}
-            />
-          </FormControl>
-          <FormControl
+            id='outlined-name'
+            label='氏名'
+            variant='outlined'
+            {...register('name')}
+            error={'name' in errors}
+            helperText={errors.name?.message}
+          />
+          <TextField
+            className={styles.l_contact__input}
+            required
             fullWidth
-            sx={{ m: 1 }}
-            variant='filled'
-            color='secondary'
-          >
-            <InputLabel htmlFor='filled-adornment-mail'>
-              メールアドレス
-            </InputLabel>
-            <FilledInput
-              id='filled-adornment-mail'
-              type='mail'
-              value={values.mail}
-              onChange={handleChange('mail')}
-            />
-          </FormControl>
-          <FormControl
+            id='outlined-email'
+            label='メールアドレス'
+            variant='outlined'
+            {...register('email')}
+            error={'email' in errors}
+            helperText={errors.email?.message}
+          />
+          <TextField
+            className={styles.l_contact__input}
+            required
             fullWidth
-            sx={{ m: 1 }}
-            variant='filled'
-            color='secondary'
-          >
-            <InputLabel htmlFor='filled-adornment-title'>件名</InputLabel>
-            <Input
-              id='filled-adornment-title'
-              value={values.title}
-              onChange={handleChange('title')}
-            />
-          </FormControl>
-          <FormControl
+            id='outlined-title'
+            label='件名'
+            variant='outlined'
+            {...register('title')}
+            error={'title' in errors}
+            helperText={errors.title?.message}
+          />
+          <TextField
+            className={styles.l_contact__input}
+            required
             fullWidth
-            sx={{ m: 1 }}
-            variant='filled'
-            color='secondary'
-          >
-            <InputLabel htmlFor='filled-adornment-message'>
-              メッセージ
-            </InputLabel>
-            <FilledInput
-              id='filled-adornment-message'
-              value={values.message}
-              multiline
-              rows={4}
-              onChange={handleChange('message')}
-            />
-          </FormControl>
+            id='outlined-message'
+            label='メッセージ'
+            variant='outlined'
+            multiline
+            rows={4}
+            {...register('message')}
+            error={'message' in errors}
+            helperText={errors.message?.message}
+          />
+          <div className={styles.l_contact__button}>
+            <Button
+              fullWidth
+              color='secondary'
+              variant='contained'
+              size='large'
+              onClick={handleSubmit(onSubmit)}
+            >
+              送信
+            </Button>
+          </div>
         </div>
       </Box>
     </div>

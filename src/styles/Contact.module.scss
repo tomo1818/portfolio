@@ -14,8 +14,18 @@
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
-    padding: 24px;
+    padding: 2rem 1.5rem;
     background-color: #fff;
     border: 1px solid rgba(51, 51, 51, 0.3);
+
+    &__input {
+      margin-bottom: 2rem;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

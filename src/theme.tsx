@@ -8,9 +8,9 @@ const theme = createTheme({
       main: '#cd162c',
     },
     secondary: {
-      // main: '#707593',
-      main: '#007FFF',
-      // main: '#333',
+      // main: '#707593', グレー
+      main: '#007FFF', // 青
+      // main: '#333', // 黒
     },
     error: {
       main: red.A400,
