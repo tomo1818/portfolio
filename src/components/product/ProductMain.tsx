@@ -22,7 +22,7 @@ export const ProductMain = ({ products }: Props) => {
       {products.map((product) => (
         <Link key={product.id} href={`/product/${product.id}`}>
           <Paper className={styles.l_card} sx={{ p: 2 }}>
-            <Grid container spacing={2}>
+            <Grid container className={styles.l_card__grid} spacing={2}>
               <Image
                 category={product.category}
                 eye_catch_url={product.eye_catch.url}

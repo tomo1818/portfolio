@@ -13,7 +13,7 @@ type Props = {
 export const AccordionLayout = ({ question, answer }: Props) => {
   return (
     <>
-      <Accordion className={styles.l_accordion}>
+      <Accordion className={`${styles.l_accordion} ${styles.marginAuto}`}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls='panel1a-content'

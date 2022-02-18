@@ -1,5 +1,6 @@
 import type { Category } from '../../types/category';
 import type { Tag } from '../../types/tag';
+import Link from 'next/link';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import styles from '../../styles/ProductDetail.module.scss';
@@ -22,7 +23,9 @@ export const SideBar = ({ categories, tags }: Props) => {
           <ul>
             {categories.map((category) => (
               <li key={category.id}>
-                <a href='#'>{category.category}</a>
+                <Link href={`/category/${category.id}`}>
+                  <a>{category.category}</a>
+                </Link>
               </li>
             ))}
           </ul>
