@@ -9,15 +9,21 @@ import { SkillInfo } from '../types/skill';
 const skills: SkillInfo[] = [
   {
     rate: 3,
-    title: 'TypeScript',
+    title: 'JavaScript',
     description:
-      'JavaScriptでスタックやキュー、木構造などの基礎的なアルゴリズムの学習しました。TypeScriptはFWを学習する際に学びました。',
+      '1番初めに学習した言語です。JavaScriptとJavaでスタックやキュー、木構造などの基礎的なアルゴリズムの学習しました。',
   },
   {
     rate: 2,
     title: 'Java',
     description:
-      'JavaでOOPやMVCモデルを学びました。JSから学習を始めたので初めは型付けに慣れるまでは時間がかかりました。',
+      '基礎的なアルゴリズムに加え、OOPやMVCモデルをJavaで学びました。JSから学習を始めたので初めは型付けに慣れるまでは時間がかかりました。',
+  },
+  {
+    rate: 2,
+    title: 'TypeScript',
+    description:
+      'ReactやVueなどのフレームワークをを学習する際に学びました。JSに慣れていたので割ととっつきやすかったです。',
   },
   {
     rate: 1,
@@ -40,7 +46,7 @@ const skills: SkillInfo[] = [
     rate: 2,
     title: 'React',
     description:
-      'このポートフォリオはNext.js＋TypeScript＋microCMSで作成しています。',
+      'このポートフォリオはNext.js＋TypeScript＋microCMS+materialUIで作成しています。',
   },
   {
     rate: 2,
