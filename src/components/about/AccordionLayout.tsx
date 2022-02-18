@@ -8,9 +8,9 @@ import styles from '../../styles/About.module.scss';
 type Props = {
   question: string;
   answer: string;
-}
+};
 
-export const AccordionLayout = ({question, answer}: Props) => {
+export const AccordionLayout = ({ question, answer }: Props) => {
   return (
     <>
       <Accordion className={styles.l_accordion}>
@@ -19,7 +19,9 @@ export const AccordionLayout = ({question, answer}: Props) => {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography className={styles.l_accordion__text}>{question}</Typography>
+          <Typography className={styles.l_accordion__text}>
+            {question}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography className={styles.l_accordion__text}>{answer}</Typography>

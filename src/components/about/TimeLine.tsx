@@ -5,13 +5,7 @@ import Box from '@mui/material/Box';
 import tagStyles from '../../styles/Product.module.scss';
 import type { Intern } from '../../types/intern';
 
-export const TimeLine = ({
-  date,
-  title,
-  eventDesc,
-  tags,
-  icon,
-}: Intern) => {
+export const TimeLine = ({ date, title, eventDesc, tags, icon }: Intern) => {
   return (
     <>
       <VerticalTimelineElement
