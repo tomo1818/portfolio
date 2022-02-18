@@ -25,33 +25,18 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import tagStyles from '../styles/Product.module.scss';
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
+import type { Intern } from '../types/intern';
 
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
+const internList: Intern[] = [
+  {
+    id: 0,
+    date: '2021年4月 〜 現在',
+    title: '大学入学',
+    eventDesc: 'Shopifyを用いたECサイト制作業務を行なっています。',
+    isShowIcon: true,
+    icon: <SiShopify />,
+    iconColor: '#fff',
   },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-}));
-
-function createData(name: string, content: string) {
-  return { name, content };
-}
-
-const rows = [
-  createData('氏名', 'tomo'),
-  createData('所属', '東京工業大学 工学院 修士1年'),
 ];
 
 export default function About() {
@@ -60,33 +45,11 @@ export default function About() {
       className={`${commonStyles.mainContainer} ${commonStyles.mainBg} ${styles.aboutContainer}`}
     >
       <PageTitle title='About' />
-      <div>
-        <TableContainer
-          component={Paper}
-          sx={{
-            maxWidth: 960,
-            margin: '0 auto',
-          }}
-        >
-          <Table sx={{ minWidth: 700 }} aria-label='customized table'>
-            <TableBody>
-              {rows.map((row) => (
-                <StyledTableRow key={row.name}>
-                  <StyledTableCell component='th' scope='row' align='center'>
-                    {row.name}
-                  </StyledTableCell>
-                  <StyledTableCell align='center'>
-                    {row.content}
-                  </StyledTableCell>
-                </StyledTableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </div>
-      <VerticalTimeline className={tagStyles.productContainer}>
+      <VerticalTimeline
+        className={`${tagStyles.productContainer} ${styles.l_timeLine}`}
+      >
         <VerticalTimelineElement
-          className='vertical-timeline-element--work'
+          className='vertical-timeline-element--work vertical-timeline-element-date'
           date='2021年4月 〜 現在'
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<SiShopify />}

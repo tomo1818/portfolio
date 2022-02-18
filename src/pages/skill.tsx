@@ -4,8 +4,9 @@ import styles from '../styles/Skill.module.scss';
 import Card from '../components/skill/Card';
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
+import { SkillInfo } from '../types/skill';
 
-const skills = [
+const skills: SkillInfo[] = [
   {
     rate: 3,
     title: 'TypeScript',
@@ -61,7 +62,7 @@ export default function Skill() {
       <PageTitle title='Skill' />
       <Grid container spacing={2} className={styles.l_skill}>
         {skills.map((skill) => (
-          <Grid key={skill.title} xs={12} sm={6} lg={4}>
+          <Grid item key={skill.title} xs={12} sm={6} lg={4}>
             <Card
               title={skill.title}
               description={skill.description}
