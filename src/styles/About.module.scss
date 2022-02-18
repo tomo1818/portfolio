@@ -1,7 +1,27 @@
 .aboutContainer {
   display: block;
 
-  .l_about {
+  .l_table {
+    max-width: 1170px;
+    width: 95%;
+    margin: 0 auto;
+
+    &__row {
+
+      &__td, &__th {
+        text-align: center;
+      }
+
+      // &:last-child td, &:last-child th {
+      //   border: 0;
+      // }
+    }
+  }
+
+  .l_accordion {
+    max-width: 1170px;
+    width: 95%;
+    margin: 0 auto;
   }
 
   .l_timeLine {
