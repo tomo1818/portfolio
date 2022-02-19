@@ -7,7 +7,7 @@ import { Category } from '../../types/category';
 import { Product } from '../../types/product';
 
 type Props = {
-  product: Product
+  product: Product;
   category: Category;
   eye_catch_url: string;
 };
@@ -17,9 +17,7 @@ export const Image = ({ product, category, eye_catch_url }: Props) => {
     <Grid item xs={12} md={6} className={styles.l_card__leftContent}>
       <ButtonBase className={styles.l_card__leftContent__imageBox}>
         <Link href={`/category/${category.id}`}>
-          <a
-            className={styles.l_card__leftContent__categoryBox}
-          >
+          <a className={styles.l_card__leftContent__categoryBox}>
             <p className={styles.l_card__leftContent__categoryText}>
               {category.category}
             </p>

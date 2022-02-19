@@ -52,7 +52,11 @@ export const MainContent = ({ product }: Props) => {
             <a>
               <div className={styles.mainC__contents__dateContents__content}>
                 <CreateNewFolderIcon />
-                <p className={styles.mainC__contents__dateContents__content__button}>
+                <p
+                  className={
+                    styles.mainC__contents__dateContents__content__button
+                  }
+                >
                   {product.category.category}
                 </p>
               </div>
