@@ -74,6 +74,10 @@
         & > p {
           margin-left: 4px;
           margin-right: 10px;
+
+          @media screen and (max-width: 768px) {
+            font-size: 14px;
+          }
         }
 
         &__button {
@@ -86,6 +90,17 @@
       h3 {
         border-bottom: 1px solid #ddd;
         padding-bottom: 0.5rem;
+        font-size: 1.25em;
+      }
+
+      h4 {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      li {
+        line-height: 1.75;
+        margin-bottom: 0.5rem;
       }
     }
   }

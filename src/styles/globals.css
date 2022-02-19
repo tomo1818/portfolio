@@ -9,6 +9,13 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 0.3s;
+  display: block;
+}
+
+a:hover {
+  opacity: 0.8;
+  transition: all 0.3s;
 }
 
 * {

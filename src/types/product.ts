@@ -30,4 +30,6 @@ export type Product = {
     }
   ];
   description: string;
+  githubUrl: string;
+  previewUrl: string;
 };

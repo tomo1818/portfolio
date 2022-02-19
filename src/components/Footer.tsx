@@ -1,5 +1,4 @@
 import styles from '../styles/Footer.module.scss';
-import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
@@ -8,9 +7,13 @@ const Footer = () => {
       <div className={styles.l_footer__contents}>
         <p className={styles.l_footer__contents__content}>© 2021 tomo</p>
         <p className={styles.l_footer__contents__content}>
-          <Link href='https://github.com/tomo1818'>
+          <a
+            href='https://github.com/tomo1818'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <GitHubIcon />
-          </Link>
+          </a>
         </p>
       </div>
     </footer>

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { Product } from '../../types/product';
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
@@ -20,17 +19,20 @@ export const ProductMain = ({ products }: Props) => {
     >
       <PageTitle title='Product' />
       {products.map((product) => (
-        <Link key={product.id} href={`/product/${product.id}`}>
-          <Paper className={styles.l_card} sx={{ p: 2 }}>
-            <Grid container className={styles.l_card__grid} spacing={{sx: 0, md: 2}}>
-              <Image
-                category={product.category}
-                eye_catch_url={product.eye_catch.url}
-              />
-              <DescriptionText product={product} />
-            </Grid>
-          </Paper>
-        </Link>
+        <Paper key={product.id} className={styles.l_card} sx={{ p: 2 }}>
+          <Grid
+            container
+            className={styles.l_card__grid}
+            spacing={{ sx: 0, md: 2 }}
+          >
+            <Image
+              product={product}
+              category={product.category}
+              eye_catch_url={product.eye_catch.url}
+            />
+            <DescriptionText product={product} />
+          </Grid>
+        </Paper>
       ))}
     </div>
   );

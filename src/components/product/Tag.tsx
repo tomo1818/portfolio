@@ -13,12 +13,14 @@ export const TagContent = ({ tags }: Props) => {
     <Box className={styles.l_card__rightContent__tagBox}>
       {tags.map((tag) => (
         <Link key={tag.tag} href={`/tag/${tag.id}`}>
-          <Typography
-            className={styles.l_card__rightContent__tagName}
-            variant='body2'
-          >
-            {tag.tag}
-          </Typography>
+          <a>
+            <Typography
+              className={styles.l_card__rightContent__tagName}
+              variant='body2'
+            >
+              {tag.tag}
+            </Typography>
+          </a>
         </Link>
       ))}
     </Box>

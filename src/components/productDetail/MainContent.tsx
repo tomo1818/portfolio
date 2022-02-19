@@ -49,12 +49,14 @@ export const MainContent = ({ product }: Props) => {
             <p>{revisedAt}</p>
           </div>
           <Link href={`/category/${product.category.id}`}>
-            <div className={styles.mainC__contents__dateContents__content}>
-              <CreateNewFolderIcon />
-              <p className={styles.mainC__contents__dateContents__content__button}>
-                {product.category.category}
-              </p>
-            </div>
+            <a>
+              <div className={styles.mainC__contents__dateContents__content}>
+                <CreateNewFolderIcon />
+                <p className={styles.mainC__contents__dateContents__content__button}>
+                  {product.category.category}
+                </p>
+              </div>
+            </a>
           </Link>
         </div>
         <TagContent tags={product.tag} />

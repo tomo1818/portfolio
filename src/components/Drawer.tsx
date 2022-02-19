@@ -42,9 +42,11 @@ export const DrawerMenu = ({ menuList }: Props) => {
             key={text}
             href={text === 'HOME' ? '/' : '/' + text.toLowerCase()}
           >
-            <ListItem button key={text} sx={{ textAlign: 'center' }}>
-              <ListItemText primary={text} />
-            </ListItem>
+            <a>
+              <ListItem button key={text} sx={{ textAlign: 'center' }}>
+                <ListItemText primary={text} />
+              </ListItem>
+            </a>
           </Link>
         ))}
       </List>

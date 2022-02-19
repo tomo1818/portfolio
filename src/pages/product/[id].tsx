@@ -20,7 +20,7 @@ export default function BlogId({ product, categories, tags }: Props) {
   return (
     <main>
       <EyeCatch product={product} />
-      <Grid container spacing={2} className={styles.main}>
+      <Grid container spacing={{ sx: 0, md: 2 }} className={styles.main}>
         <MainContent product={product} />
         <SideBar categories={categories} tags={tags} />
       </Grid>
