@@ -19,7 +19,7 @@ export const DescriptionText = ({ product }: Props) => {
       container
       className={styles.l_card__rightContent}
     >
-      <Grid item xs container direction='column' spacing={2}>
+      <Grid item xs container direction='column' spacing={{sx: 0, md: 2}}>
         <Grid item xs className={styles.l_card__rightContent__box}>
           <Typography
             gutterBottom

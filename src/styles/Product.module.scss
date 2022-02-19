@@ -23,6 +23,11 @@
 
     &__leftContent {
       padding: 0;
+
+      @media screen and (max-width: 960px) {
+        margin-bottom: 20px;
+      }
+
       &__imageBox {
         margin: 0 auto;
         display: flex;
