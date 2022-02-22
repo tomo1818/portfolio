@@ -52,7 +52,7 @@ const skills: SkillInfo[] = [
     rate: 2,
     title: 'Vue',
     description:
-      '初めてJSのフレームワークです。初めてやるならReactより取り組みやすかったと思います。',
+      '初めて使用したJS関連のフレームワークです。初めてやるならReactより取り組みやすかったと思います。',
   },
   {
     rate: 2,
