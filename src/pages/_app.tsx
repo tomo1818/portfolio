@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <div className='App'>
         <Head>
+          <title>ポートフォリオ</title>
           <link rel='shortcut icon' href='/favicon.svg' />
         </Head>
         <Header></Header>
