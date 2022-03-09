@@ -59,7 +59,7 @@ const accordionInfo: AccordionInfo[] = [
 const internList: Intern[] = [
   {
     id: 0,
-    date: '2021年4月 〜 現在',
+    date: '2021年4月 〜 2022年3月',
     title: '株式会社 飛躍',
     eventDesc:
       'Shopifyを用いたECサイト制作業務を行なっています。LiquidはShopify特有のプログラミング言語です。',
