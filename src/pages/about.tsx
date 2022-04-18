@@ -13,7 +13,7 @@ import { AccordionLayout } from '../components/about/AccordionLayout';
 import { TimeLine } from '../components/about/TimeLine';
 import { SiPython, SiShopify } from 'react-icons/si';
 import { ImAndroid } from 'react-icons/im';
-import { RiTeamFill } from 'react-icons/ri';
+import { SiNextdotjs } from 'react-icons/si';
 
 import commonStyles from '../styles/Common.module.scss';
 import styles from '../styles/About.module.scss';
@@ -85,12 +85,11 @@ const internList: Intern[] = [
   },
   {
     id: 3,
-    date: '2022年3月からの予定',
-    title: 'Recursion, Inc',
-    eventDesc:
-      'プログラミング学習プラットフォーム内でチーム開発を行う際のメンターを努める予定です。',
-    tags: ['FrontEnd', 'BackEnd'],
-    icon: <RiTeamFill />,
+    date: '2022年4月〜',
+    title: '株式会社 JX通信社',
+    eventDesc: 'フロントエンドの開発を担当',
+    tags: ['FrontEnd', 'Next.js', 'React', 'TypeScript'],
+    icon: <SiNextdotjs />,
   },
 ];
 
