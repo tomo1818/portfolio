@@ -24,6 +24,8 @@
       &__imageBox {
         margin: 0 auto;
         display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
         position: relative;
       }
 
@@ -58,12 +60,25 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
       }
 
       &__titleBox {
         display: flex;
         flex-wrap: wrap;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
         align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         margin-bottom: 0.5em;
 
         &__child {
@@ -87,6 +102,9 @@
       &__tagBox {
         display: flex;
         flex-wrap: wrap;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        -ms-flex-wrap: wrap;
       }
 
       &__tagName {
