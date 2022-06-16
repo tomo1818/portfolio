@@ -24,7 +24,6 @@
     "@mui/material": "^5.4.1",
     "@sendgrid/mail": "^7.6.1",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
-    "autoprefixer": "^10.4.7",
     "emailjs-com": "^3.2.0",
     "material-ui": "^1.0.0-beta.47",
     "microcms-js-sdk": "^2.0.0",
@@ -46,9 +45,16 @@
     "@types/nodemailer": "^6.4.4",
     "@types/react": "17.0.39",
     "@types/react-vertical-timeline-component": "^3.3.2",
+    "autoprefixer": "^10.4.7",
     "eslint": "8.9.0",
     "eslint-config-next": "12.0.10",
+    "postcss-import": "^14.1.0",
     "typescript": "4.5.5"
   },
-  "browserslist": [">0.3%", "not ie 11", "not dead", "not op_mini all"]
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ]
 }
