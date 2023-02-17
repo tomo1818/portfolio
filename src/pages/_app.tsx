@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const AnyComponent = Component as any;
   return (
     <ThemeProvider theme={theme}>
       <div className='App'>
@@ -15,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <link rel='shortcut icon' href='/favicon.svg' />
         </Head>
         <Header></Header>
-        <Component {...pageProps} />
+        <AnyComponent {...pageProps} />
         <Footer></Footer>
       </div>
     </ThemeProvider>
